@@ -1,8 +1,7 @@
-import Image from "next/image";
-import Header from "@/app/component/header";
-import Mvp from "@/app/component/mvp";
-import Features from "@/app/component/features";
-export default function Home() {
+import Header from "../app/component/header";
+import Mvp from "../app/component/mvp";
+import Features from "../app/component/feature";
+function Home() {
   return (
     <>
       <Header />
@@ -11,3 +10,4 @@ export default function Home() {
     </>
   );
 }
+export default Home

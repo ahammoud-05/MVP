@@ -1,6 +1,8 @@
+"use client"
 import React from "react";
 import Image from "next/image";
-import FeatureData from "@/app/data/features.json";
+import FeatureData from "../data/features.json";
+import { motion } from "framer-motion";
 
 function Features() {
   return (
@@ -9,10 +11,12 @@ function Features() {
         <h1 className="text-[#6CD5F6] font-bold pt-10 text-center text-[35px] lg:text-[65px]">
           The Features
         </h1>
-        <div className="w-[70%] lg:w-[70%] mx-auto flex flex-wrap items-center justify-between gap-10 mt-10">
+        <div className="w-[70%] lg:w-[80%] mx-auto flex flex-wrap items-center justify-between gap-10 mt-10">
           {FeatureData && FeatureData.length > 0 ? (
             FeatureData.map((item, index) => (
-              <div key={index} className="w-[295px] text-center">
+              <motion.div initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9 }} key={index} className="w-[295px] text-center">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -26,7 +30,7 @@ function Features() {
                 <p className="text-white text-[13px] lg:text-[18px]">
                   {item.para}
                 </p>
-              </div>
+              </motion.div>
             ))
           ) : (
             <p className="text-white text-center">Loading...</p>
