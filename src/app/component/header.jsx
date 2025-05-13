@@ -81,7 +81,7 @@ function Header() {
               type="email"
               placeholder="Your Email"
               required
-              className="bg-[#DFDFDF] opacity-80 outline-none text-[16px] w-[250px] lg:w-[364px] h-[55px] lg:h-[63px] rounded-full pl-5 text-black"
+              className="bg-[#DFDFDF] opacity-80  text-[16px] w-[250px] lg:w-[364px] h-[55px] lg:h-[63px] rounded-full pl-5 text-black"
             />
             {errors.email && (
               <p className="text-red-500 text-sm mt-1">

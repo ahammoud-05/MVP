@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import Image from "next/image";
 import FeatureData from "../data/features.json";
@@ -14,9 +14,13 @@ function Features() {
         <div className="w-[70%] lg:w-[80%] mx-auto flex flex-wrap items-center justify-between gap-10 mt-10">
           {FeatureData && FeatureData.length > 0 ? (
             FeatureData.map((item, index) => (
-              <motion.div initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9 }} key={index} className="w-[295px] text-center">
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1 }}
+                key={index}
+                className="w-[295px] text-center"
+              >
                 <Image
                   src={item.image}
                   alt={item.title}
