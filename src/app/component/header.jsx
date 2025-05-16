@@ -16,7 +16,6 @@ const contactFormSchema = z.object({
 const defaultValues = {
   email: "",
 };
-
 function Header() {
   const [isLoading, setIsLoading] = useState(false);
 

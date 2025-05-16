@@ -1,10 +1,8 @@
 export const EmailTemplate = ({ values }) => {
-  const {
-    email,   
-    name,
-  } = values;
+  const { email } = values;
 
-  const isAdmin = email === "bigibo777@gmail.com";
+  const isAdmin = email === "abdulhani232@gmail.com";
+  const signupTime = new Date().toUTCString(); // You can format this better if needed
 
   const adminTemplate = `
     <!DOCTYPE html>
@@ -65,9 +63,8 @@ export const EmailTemplate = ({ values }) => {
 
     <p><span class="highlight">User Details:</span></p>
     <ul>
-      <li><strong>Name:</strong> ${name}</li>
       <li><strong>Email:</strong>${email}</li>
-      <li><strong>Signup Time:</strong> 2025-05-16 10:34 AM UTC</li>
+      <li><strong>Signup Time:</strong>${signupTime}</li>
     </ul>
 
     <p>Please follow up if any action is required.</p>
