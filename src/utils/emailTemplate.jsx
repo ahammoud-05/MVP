@@ -4,7 +4,7 @@ export const EmailTemplate = ({ values }) => {
     name,
   } = values;
 
-  const isAdmin = email === "abdulhani232@gmail.com";
+  const isAdmin = email === "bigibo777@gmail.com";
 
   const adminTemplate = `
     <!DOCTYPE html>
