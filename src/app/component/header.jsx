@@ -37,7 +37,7 @@ function Header() {
     try {
       const formPayload = new FormData();
       formPayload.append("email", data.email);
-      formPayload.append("subject", "New query from Osceola Towing");
+      formPayload.append("subject", "New query from MVP.ai.");
       formPayload.append("html", EmailTemplate({ values: data }));
 
       const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "/api/test";
@@ -49,7 +49,7 @@ function Header() {
 
       if (!response.ok) throw new Error("Failed to submit form");
 
-      toast.success("Message sent successfully!", { id: loadingToastId });
+      toast.success("Welcome! You've successfully joined MVP.ai", { id: loadingToastId });
       reset();
     } catch (error) {
       console.error("Form submission error:", error);

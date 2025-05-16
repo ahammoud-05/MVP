@@ -1,59 +1,140 @@
 export const EmailTemplate = ({ values }) => {
   const {
-    message = "Hello, I’m interested in your services.",
-    email,
-    service,
+    email,   
     name,
-    phone,
   } = values;
 
   const isAdmin = email === "abdulhani232@gmail.com";
 
   const adminTemplate = `
     <!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="UTF-8" />
-        <title>Admin Notification</title>
-        <style>
-          body { font-family: sans-serif; background: #fff; color: #333; padding: 20px; }
-        </style>
-      </head>
-      <body>
-        <h2>🚨 Admin Submission Received</h2>
-        <p><strong>Name:</strong> ${name || "N/A"}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone || "N/A"}</p>
-        <p><strong>Service:</strong> ${service || "N/A"}</p>
-        <p><strong>Message:</strong> ${message}</p>
-      </body>
-    </html>
+  <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>New User Signup Alert</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      background-color: #ffffff;
+      margin: 40px auto;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .logo {
+      max-width: 140px;
+      display: block;
+      margin: 0 auto 20px;
+    }
+    h2 {
+      color: #2c3e50;
+      text-align: center;
+    }
+    p {
+      font-size: 16px;
+      color: #555555;
+    }
+    .footer {
+      font-size: 12px;
+      color: #aaaaaa;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #1a73e8;
+    }
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://mvp-liard.vercel.app/logo.svg" alt="MVP.ai Logo" class="logo">
+
+    <h2>📢 New User Signup Notification</h2>
+    <p>A new user has successfully signed up on <strong>MVP.ai</strong>.</p>
+
+    <p><span class="highlight">User Details:</span></p>
+    <ul>
+      <li><strong>Name:</strong> ${name}</li>
+      <li><strong>Email:</strong>${email}</li>
+      <li><strong>Signup Time:</strong> 2025-05-16 10:34 AM UTC</li>
+    </ul>
+
+    <p>Please follow up if any action is required.</p>
+
+    <div class="footer">
+      This is an automated message from MVP.ai internal system.
+    </div>
+  </div>
+</body>
+</html>
+
   `;
 
   const userTemplate = `
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="UTF-8" />
-        <title>User Confirmation</title>
-        <style>
-          body { font-family: sans-serif; background: #f9f9f9; color: #333; padding: 20px; }
-        </style>
-      </head>
-      <body>
-        <h2>✅ Thank you for contacting us!</h2>
-        <p>Dear ${name || "Customer"},</p>
-        <p>We have received your request. Here are the details:</p>
-        <ul>
-          <li><strong>Email:</strong> ${email}</li>
-          <li><strong>Phone:</strong> ${phone || "N/A"}</li>
-          <li><strong>Service:</strong> ${service || "N/A"}</li>
-          <li><strong>Message:</strong> ${message}</li>
-        </ul>
-        <p>We will get back to you shortly.</p>
-      </body>
-    </html>
-  `;
+  <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to MVP.ai</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      background-color: #ffffff;
+      margin: 40px auto;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    p {
+      font-size: 16px;
+      color: #555555;
+    }
+    .footer {
+      font-size: 12px;
+      color: #aaaaaa;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .logo {
+      max-width: 120px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://mvp-liard.vercel.app/logo.svg" alt="MVP.ai Logo" class="logo">
+    <h1>Welcome!</h1>
+    <p>You've successfully joined <strong>MVP.ai</strong>.</p>
+    <p>We're excited to have you on board. If you have any questions, feel free to reach out to our team.</p>
+    <p>Let's build something amazing together!</p>
+    <div class="footer">
+      © 2025 MVP.ai — All rights reserved.
+    </div>
+  </div>
+</body>
+</html>
+`;
 
   return isAdmin ? adminTemplate : userTemplate;
 };
