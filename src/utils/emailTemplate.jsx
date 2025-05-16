@@ -10,7 +10,7 @@ export const EmailTemplate = ({ values }) => {
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>New User Signup Alert</title>
+  <title>Admin Mail</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -83,7 +83,7 @@ export const EmailTemplate = ({ values }) => {
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Welcome to MVP.ai</title>
+  <title>User Mail</title>
   <style>
     body {
       font-family: Arial, sans-serif;
