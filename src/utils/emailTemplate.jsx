@@ -56,7 +56,7 @@ export const EmailTemplate = ({ values }) => {
 </head>
 <body>
   <div class="container">
-<img src="https://res.cloudinary.com/demo/image/upload/v1700000000/logo.svg" alt="MVP.ai Logo" class="logo">
+    <img src="https://mvp-liard.vercel.app/logo.png" alt="MVP.ai Logo" class="logo">
 
     <h2>📢 New User Signup Notification</h2>
     <p>A new user has successfully signed up on <strong>MVP.ai</strong>.</p>
@@ -120,7 +120,7 @@ export const EmailTemplate = ({ values }) => {
 </head>
 <body>
   <div class="container">
-<img src="https://res.cloudinary.com/demo/image/upload/v1700000000/logo.svg" alt="MVP.ai Logo" class="logo">
+    <img src="https://mvp-liard.vercel.app/logo.png" alt="MVP.ai Logo" class="logo">
     <h1>Welcome!</h1>
     <p>You've successfully joined <strong>MVP.ai</strong>.</p>
     <p>We're excited to have you on board. If you have any questions, feel free to reach out to our team.</p>
