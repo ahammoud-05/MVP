@@ -30,30 +30,27 @@ function Footer() {
   });
 
   const onSubmit = async (data) => {
-    const loadingToast = toast.loading("Sending message...");
+    const loadingToastId = toast.loading("Sending message...");
     setIsLoading(true);
 
     try {
-      const formPayload = new FormData();
-      formPayload.append("email", data.email);
-      formPayload.append("subject", "New signup from Osceola Towing (Footer)");
-      formPayload.append("html", EmailTemplate({ values: data }));
-
-      const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "/api/test";
-
-      const response = await fetch(apiUrl, {
+      const response = await fetch("/api/send-email", {
         method: "POST",
-        body: formPayload,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: data.email }),
       });
 
       if (!response.ok) throw new Error("Failed to submit form");
-      toast.dismiss(loadingToast);
-      toast.success("Signed up successfully!");
+
+      toast.success("Welcome! You've successfully joined MVP.ai", {
+        id: loadingToastId,
+      });
       reset();
     } catch (error) {
-      console.error("Footer form error:", error);
-      toast.dismiss(loadingToast);
-      toast.error("Something went wrong. Try again later.");
+      console.error("Form submission error:", error);
+      toast.error("Failed to send message. Please try again later.", {
+        id: loadingToastId,
+      });
     } finally {
       setIsLoading(false);
     }
