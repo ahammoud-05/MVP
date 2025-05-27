@@ -5,10 +5,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import toast from "react-hot-toast";
-import { EmailTemplate } from "../../utils/emailTemplate";
 import { motion } from "framer-motion";
 
-// Schema
 const contactFormSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
 });
@@ -16,6 +14,7 @@ const contactFormSchema = z.object({
 const defaultValues = {
   email: "",
 };
+
 function Header() {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -34,21 +33,17 @@ function Header() {
     setIsLoading(true);
 
     try {
-      const formPayload = new FormData();
-      formPayload.append("email", data.email);
-      formPayload.append("subject", "New query from MVP.ai.");
-      formPayload.append("html", EmailTemplate({ values: data }));
-
-      const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "/api/test";
-
-      const response = await fetch(apiUrl, {
+      const response = await fetch("/api/send-email", {
         method: "POST",
-        body: formPayload,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: data.email }),
       });
 
       if (!response.ok) throw new Error("Failed to submit form");
 
-      toast.success("Welcome! You've successfully joined MVP.ai", { id: loadingToastId });
+      toast.success("Welcome! You've successfully joined MVP.ai", {
+        id: loadingToastId,
+      });
       reset();
     } catch (error) {
       console.error("Form submission error:", error);
