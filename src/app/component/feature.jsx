@@ -19,7 +19,7 @@ function Features() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1 }}
                 key={index}
-                className="w-[295px] text-center"
+                className="w-[300px] text-center"
               >
                 <Image
                   src={item.image}
@@ -28,7 +28,7 @@ function Features() {
                   height={64}
                   className="w-[38px] h-[44px] mx-auto"
                 />
-                <h1 className="text-white font-semibold text-[20px] lg:text-[30px] mt-5 mb-4">
+                <h1 className="text-white font-semibold text-[20px] lg:text-[28px] mt-5 mb-4">
                   {item.title}
                 </h1>
                 <p className="text-white text-[13px] lg:text-[18px]">
