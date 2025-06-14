@@ -63,10 +63,10 @@ function Header() {
         transition={{ duration: 0.9 }}
         className="lg:w-[600px] w-[70%] space-y-10 text-center"
       >
-        <h1 className="lg:text-[65px] text-[35px] text-white leading-none font-bold">
+        <h1 className="lg:text-[65px] text-[35px] text-white leading-none font-bold text-shadow-lg">
           Meet Your AI Companion
         </h1>
-        <p className="text-white text-[17px] lg:text-[18px]">
+        <p className="text-white text-[17px] lg:text-[18px] text-shadow-lg">
           Have fun, learn anything, and build an elevating bond with your own
           personality-packed MVP!
         </p>

@@ -7,6 +7,7 @@ import { z } from "zod";
 import toast from "react-hot-toast";
 import { EmailTemplate } from "../../utils/emailTemplate";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const contactFormSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
@@ -58,7 +59,7 @@ function Footer() {
 
   return (
     <>
-      <div className="lg:w-[80%] w-[75%] mx-auto mt-20 lg:mb-20 mb-0 xl:flex items-center justify-between">
+      <div className="md:w-[90%] w-[95%] mx-auto mt-20 mb-10 md:flex items-center justify-between gap-8">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -119,23 +120,56 @@ function Footer() {
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          whileHover={{ scale: 1.1 }}
+          whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.3 }}
-          className="cursor-pointer flex lg:mt-0 mt-5 lg:justify-end justify-center"
+          className="flex flex-col items-center mt-5 lg:mt-0 w-full"
         >
           <Image
             src="/assets/cartoon.svg"
-            alt="logo"
+            alt="Cartoon"
             width={326}
-            height={106}
+            height={326}
+            className="w-[180px] md:w-[260px] lg:w-[326px]"
           />
+          <div className="flex gap-12 mt-4">
+
+            <Link href="https://www.reddit.com/user/youraimvp/">
+            <Image 
+              src="/assets/icon.svg" 
+              alt="Reddit" 
+              width={40} 
+              height={40} 
+            />
+            </Link>
+
+            <Link href="https://www.instagram.com/getmvp.ai?igsh=ODh2dXIyZWYzbzNz&utm_source=qr">
+            <Image
+              src="/assets/insta.svg"
+              alt="Instagram"
+              width={40}
+              height={40}
+            />
+            </Link>
+
+            <Link href="https://www.linkedin.com/company/youraimvp/">
+            <Image
+              src="/assets/linkedin.svg"
+              alt="LinkedIn"
+              width={40}
+              height={40}
+            />
+            </Link>
+
+            <Link href="https://discord.gg/j5DD23kHw2">
+            <Image
+              src="/assets/discord.svg"
+              alt="Discord"
+              width={40}
+              height={40}
+            />
+            </Link>
+          </div>
         </motion.div>
-      </div>
-      <div className="lg:hidden block w-[70%] mx-auto my-10 flex justify-between items-center">
-        <Image src="/assets/icon.svg" alt="logo" width={25} height={28} />
-        <Image src="/assets/insta.svg" alt="logo" width={25} height={28} />
-        <Image src="/assets/linkedin.svg" alt="logo" width={25} height={28} />
-        <Image src="/assets/discord.svg" alt="logo" width={25} height={28} />
       </div>
     </>
   );

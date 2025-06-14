@@ -1,10 +1,13 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import FeatureData from "../data/features.json";
 import { motion } from "framer-motion";
+import Accordion from "./Accordion";
 
 function Features() {
+
+
   return (
     <div className="relative">
       <div className="bg-[#1A2E5C] lg:p-3 -mt-1 px-5 pt-5 z-0 lg:pb-0 pb-10 relative lg:h-[600px] w-full">
@@ -57,7 +60,10 @@ function Features() {
           className="w-[90%] lg:hidden block mx-auto absolute xl:-mt-32 mt-20 right-0 left-0 z-40 object-cover  "
         />
       </div>
-      <div className="lg:bg-gradient-custom-2 bg-custom h-[40vh] -mt-1 "></div>
+      <div className="bg-custom-3 pt-200 md:pt-350 lg:pt-70">
+        <Accordion />
+      </div>
+      <div className="lg:bg-gradient-custom-2 bg-custom h-[8vh] pb-10"></div>
     </div>
   );
 }
