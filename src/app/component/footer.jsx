@@ -95,7 +95,7 @@ function Footer() {
               transition={{ duration: 0.3 }}
               type="submit"
               disabled={isLoading}
-              className="lg:w-[150px] cursor-pointer text-white w-[160px] h-[60px] lg:h-[60px] border-b-8 border-t-4 border-x-6 bg-[#F3ABC7] rounded-full text-center text-lg lg:text-[20px] border-black"
+              className=" font-bold lg:w-[150px] cursor-pointer text-white w-[160px] h-[60px] lg:h-[60px] border-b-8 border-t-4 border-x-6 bg-[#F3ABC7] rounded-full text-center text-lg lg:text-[20px] border-black"
             >
               {isLoading ? "Signing up..." : "Sign up"}
             </motion.button>

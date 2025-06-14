@@ -13,6 +13,11 @@ body {
   font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
+  overflow-x: hidden;
+}
+
+#_rht_toaster {
+  overflow-x: hidden;
 }
 
 @layer utilities {

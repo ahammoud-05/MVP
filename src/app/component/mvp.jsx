@@ -10,7 +10,7 @@ function Mvp() {
         <motion.div   initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.9 }}className="unlock-regular w-full lg:w-[600px]">
-          <h1 className="lg:text-[40px] text-[25px] text-white unlock-regular">
+          <h1 className="lg:text-[40px] text-[25px] text-white unlock-regular font-bold font-dm">
             What Is MVP.ai?
           </h1>
 

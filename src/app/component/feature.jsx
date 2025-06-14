@@ -7,7 +7,6 @@ import Accordion from "./Accordion";
 
 function Features() {
 
-
   return (
     <div className="relative">
       <div className="bg-[#1A2E5C] lg:p-3 -mt-1 px-5 pt-5 z-0 lg:pb-0 pb-10 relative lg:h-[600px] w-full">

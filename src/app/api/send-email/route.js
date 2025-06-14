@@ -3,25 +3,15 @@ import { Resend } from "resend";
 import { NextResponse } from "next/server";
 import { EmailTemplate } from "../../../utils/emailTemplate";
 
+const resend = new Resend(process.env.RESEND_API_KEY);
 const SENDER_EMAIL = "mvp.aiceo@gmail.com";
 
 export async function POST(req) {
   const { email } = await req.json();
-  console.log("email", email);
-
+console.log("email",email)
   if (!email) {
     return NextResponse.json({ error: "Email is required" }, { status: 400 });
   }
-
-  if (!process.env.RESEND_API_KEY) {
-    console.warn("Missing RESEND_API_KEY. Skipping email send.");
-    return NextResponse.json(
-      { warning: "Email not sent (missing API key)." },
-      { status: 200 }
-    );
-  }
-
-  const resend = new Resend(process.env.RESEND_API_KEY);
 
   try {
     await resend.emails.send({
