@@ -43,7 +43,7 @@ function Features() {
           )}
         </div>
       </div>
-      <div className="bg-gradient-custom lg:px-10 -mt-1 lg:pt-10 h-[500px] lg:h-screen ">
+      <div className="bg-gradient-custom lg:px-10 -mt-1 lg:pt-10 h-[500px] lg:h-screen relative">
         <Image
           src="/assets/pics.svg"
           alt="pic"
@@ -59,7 +59,7 @@ function Features() {
           className="w-[90%] lg:hidden block mx-auto absolute xl:-mt-32 mt-20 right-0 left-0 z-40 object-cover  "
         />
       </div>
-      <div className="bg-custom-3 pt-200 md:pt-350 lg:pt-70">
+      <div className="bg-custom-3 pt-[42rem] sm:pt-[54rem] md:pt-[30rem] lg:pt-[24rem]">
         <Accordion />
       </div>
       <div className="lg:bg-gradient-custom-2 bg-custom h-[8vh] pb-10"></div>
