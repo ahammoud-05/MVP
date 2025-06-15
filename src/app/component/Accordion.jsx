@@ -45,7 +45,7 @@ export default function Accordion() {
       {faqs.map((faq, index) => (
         <div key={index}>
           <button
-            className="w-full text-left py-2 px-3 transition flex justify-between items-center font-semibold"
+            className="w-full text-left py-2 px-3 transition flex justify-between items-center font-bold"
             onClick={() => toggle(index)}
           >
             <span>
@@ -59,7 +59,7 @@ export default function Accordion() {
               )}
             </span>
           </button>
-          <hr className="my-4 h-[2px] bg-black border-0" />
+          <hr className="my-4 h-[3px] bg-black border-0" />
 
           {activeIndex === index && (
             <div className="bg-white text-black p-5 shadow-inner mb-6 border-black border-4 rounded-xl font-dm text-xl font-medium">
