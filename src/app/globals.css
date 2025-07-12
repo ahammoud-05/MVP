@@ -20,6 +20,7 @@ body {
   overflow-x: hidden;
 }
 
+
 @layer utilities {
   .bg-gradient-custom {
     background: linear-gradient(to bottom, #1a2e5c 0%, #ff1444 50%);
